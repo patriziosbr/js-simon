@@ -7,6 +7,7 @@
 
 var randomArr = [];
 var arrUserNum = [];
+var correctNum = [];
 
 while (randomArr.length < 5) {
     var numRandom = getRndInteger(1, 100);
@@ -23,12 +24,7 @@ console.log('array pc: ', randomArr);
 console.log('array user: ', arrUserNum);
 
 //compare arrays
-
-
-
-
-
-
+console.log(correctNum);
 // -----------FUNCTION-----------
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -37,17 +33,32 @@ function getRndInteger(min, max) {
 
 function userNumber() {
     
+    var match = true;
     while (arrUserNum.length < 5) {
         var insertNum = parseInt(prompt('inserisci 5 num'))
         if (!arrUserNum.includes(insertNum) && !isNaN(insertNum) && insertNum > 1 && insertNum < 100) {
             arrUserNum.push(insertNum);
         }
     }
+    while (match != false) {
+            
+        if (randomArr.includes(insertNum)) {
+            correctNum.push(insertNum);
+        } else {
+            match = false;
+        }
+    }   
     return arrUserNum;
 }
 
-function checkArrays(arr1, arr2) {
-    var test = arr1.includes(arr2);
-    return test;
-}
-
+// function checkArrays() {
+//     var match = true;
+//     while (match != false) {
+        
+//         if (randomArr.includes(insertNum)) {
+//             correctNum.push(insertNum);
+//         } else {
+//             match = false
+//         }
+//     }
+//  }
