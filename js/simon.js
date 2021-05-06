@@ -21,6 +21,7 @@ alert(randomArr);
 setTimeout( userNumber, 3000 );
 
 
+
 // -----------FUNCTIONS-----------
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -33,10 +34,15 @@ function userNumber() {
         if (!arrUserNum.includes(insertNum) && !isNaN(insertNum) && insertNum >= 1 && insertNum <= 100) {
             arrUserNum.push(insertNum);
         }        
-        if (randomArr.includes(insertNum)) { 
+        if (randomArr.includes(insertNum) && !correctNum.includes(insertNum)) { 
             correctNum.push(insertNum);
         } 
+
+
     }
     console.log('array user: ', arrUserNum);
-    console.log(correctNum);
+    var sameNum = correctNum.length;
+
+    console.log(correctNum, 'hai indovinato ' + sameNum );
 }
+
