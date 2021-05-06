@@ -20,45 +20,23 @@ alert(randomArr);
 //impostare timer di 30 secondi 
 setTimeout( userNumber, 3000 );
 
-console.log('array pc: ', randomArr);
-console.log('array user: ', arrUserNum);
 
-//compare arrays
-console.log(correctNum);
-// -----------FUNCTION-----------
+// -----------FUNCTIONS-----------
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 
 function userNumber() {
-    
-    var match = true;
     while (arrUserNum.length < 5) {
-        var insertNum = parseInt(prompt('inserisci 5 num'))
-        if (!arrUserNum.includes(insertNum) && !isNaN(insertNum) && insertNum > 1 && insertNum < 100) {
+        var insertNum = parseInt(prompt('inserisci 5 num'));
+        if (!arrUserNum.includes(insertNum) && !isNaN(insertNum) && insertNum >= 1 && insertNum <= 100) {
             arrUserNum.push(insertNum);
-        }
-    }
-    while (match != false) {
-            
-        if (randomArr.includes(insertNum)) {
+        }        
+        if (randomArr.includes(insertNum)) { 
             correctNum.push(insertNum);
-        } else {
-            match = false;
-        }
-    }   
-    return arrUserNum;
+        } 
+    }
+    console.log('array user: ', arrUserNum);
+    console.log(correctNum);
 }
-
-// function checkArrays() {
-//     var match = true;
-//     while (match != false) {
-        
-//         if (randomArr.includes(insertNum)) {
-//             correctNum.push(insertNum);
-//         } else {
-//             match = false
-//         }
-//     }
-//  }
